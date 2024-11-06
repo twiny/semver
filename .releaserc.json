@@ -11,7 +11,6 @@
         "releaseRules": [
           {
             "type": "release",
-            "scope": "^RELEASE-[0-9]+$",
             "release": "major"
           },
           {
@@ -62,7 +61,6 @@
       }
     ],
     "@semantic-release/release-notes-generator",
-    "@semantic-release/github",
     [
       "@semantic-release/exec",
       {
