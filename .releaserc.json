@@ -2,7 +2,7 @@
   "branches": [
     "main"
   ],
-  "repositoryUrl": "https://github.com/twiny/semver.git",
+  "repositoryUrl": "https://${TOKEN}@github.com/twiny/semver.git",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
@@ -11,7 +11,7 @@
         "releaseRules": [
           {
             "type": "release",
-            "scope": "RELEASE",
+            "scope": "RELEASE-(\\d+)",
             "release": "major"
           },
           {
