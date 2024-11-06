@@ -1,0 +1,73 @@
+{
+  "branches": [
+    "main"
+  ],
+  "repositoryUrl": "https://github.com/twiny/semver.git",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          {
+            "type": "release",
+            "scope": "^RELEASE-[0-9]+$",
+            "release": "major"
+          },
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "test",
+            "release": "patch"
+          },
+          {
+            "type": "revert",
+            "release": "patch"
+          },
+          {
+            "type": "hotfix",
+            "release": "patch"
+          },
+          {
+            "type": "bugfix",
+            "release": "patch"
+          },
+          {
+            "type": "build",
+            "release": false
+          },
+          {
+            "type": "ci",
+            "release": false
+          },
+          {
+            "type": "docs",
+            "release": false
+          },
+          {
+            "type": "content",
+            "release": false
+          },
+          {
+            "type": "chore",
+            "release": false
+          }
+        ]
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "verifyReleaseCmd": "echo \"VERSION_TAG=v${nextRelease.version}\" > release.env"
+      }
+    ]
+  ]
+}
