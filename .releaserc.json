@@ -11,7 +11,7 @@
         "releaseRules": [
           {
             "type": "release",
-            "scope": "^RELEASE-\\d+$",
+            "scope": "RELEASE",
             "release": "major"
           },
           {
